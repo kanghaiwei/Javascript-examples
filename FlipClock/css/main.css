@@ -1,0 +1,28 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body{
+	background: #ddd;
+}
+ul{
+	position: absolute;
+	overflow: hidden;
+	width: 400px;
+	height:70px;
+	left: 50%;
+	margin-left: -200px;
+	top: 20%;
+}
+li{
+	position: relative;
+	top: 0;
+	left: 0;
+	float: left;
+}
+img{
+	display: block;
+	border:none;
+	vertical-align: top;
+}
