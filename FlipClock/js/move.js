@@ -4,8 +4,7 @@
  	duration：运动持续时间
  	target：目标位置
  	endFn:回调函数
- * 
- * */
+ */
 function move(obj,attr,duration,target,endFn){
 	//起始位置begin,获取元素当前的位置
 	var b = parseFloat(getComputedStyle(obj)[attr]);
