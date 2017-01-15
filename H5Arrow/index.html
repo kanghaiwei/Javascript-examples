@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5页面箭头效果</title>
+	<style>
+		#arrow{
+			width: 49px;
+			height: 48px;
+			overflow: hidden;
+			animation: arrow 1.5s infinite;
+			-webkit-animation: arrow 1.5s infinite;
+		}
+		@-webkit-keyframes arrow {
+			0%,30% { opacity: 0; -webkit-transform: translate(0,-10px);}
+			   60% { opacity: 1; -webkit-transform: translate(0,0);}
+			  100% { opacity: 0; -webkit-transform: translate(0,10px);}
+		}
+		@keyframes arrow {
+			0%,30% { opacity: 0; -webkit-transform: translate(0,-10px);}
+			   60% { opacity: 1; -webkit-transform: translate(0,0);}
+			  100% { opacity: 0; -webkit-transform: translate(0,10px);}
+		}
+	</style>
+</head>
+<body>
+	<div id="arrow"><img src="arrow.png"></div>
+</body>
+</html>
