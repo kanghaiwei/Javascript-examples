@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content='width=decive-width,initial-scale=1,user-scalable=no'>
+	<title>html5的navigator调用手机震动</title>
+	<style>
+		a{	
+			width: 200px;
+			height: 40px;
+			border-radius: 6px;
+			display: block;
+			text-align: center;
+			line-height: 40px;
+			margin: 10px 0;
+			background: #1e90ff; 
+			text-decoration: none;
+			color: #fff;
+			font-family: "Microsoft Yahei";
+		}
+	</style>
+</head>
+<body>
+	<a href="javascript:phoneVibrate(1000);">震动1s</a>
+	<a href="javascript:phoneVibrate(2000);">震动2s</a>
+	<a href="javascript:phoneVibrate(3000);">震动3s</a>
+	<a href="javascript:phoneVibrate(4000);">震动4s</a>
+	<a href="javascript:phoneVibrate(5000);">震动5s</a>
+	<a href="javascript:window.location.reload();">刷新页面</a>
+<script>
+    function phoneVibrate(s){ //震动的时间,单位秒
+			if( navigator.vibrate ){
+				navigator.vibrate(s);
+			}else if(navigator.webkitVibrate){
+				navigator.webkitVibrate(s);
+			}
+		}
+</script>
+</body>
+</html>
