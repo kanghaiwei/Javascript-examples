@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>H5页面背景音乐的播放暂停</title>
+	<style>
+		#music_btn{
+			width: 58px;
+			height: 58px;
+		}
+		.play{
+			background-image: url(play.png);
+			background-size: 100%;
+			-webkit-animation: rotate 4s linear infinite;
+				    animation: rotate 4s linear infinite;
+		}
+		@-webkit-keyframes rotate{
+			0%{
+				-webkit-transform: rotate(0deg);
+					    transform: rotate(0deg);
+			}
+			100%{
+				-webkit-transform: rotate(360deg);
+					    transform: rotate(360deg);
+			}
+		}
+		@keyframes rotate{
+			0%{
+				-webkit-transform: rotate(0deg);
+					    transform: rotate(0deg);
+			}
+			100%{
+				-webkit-transform: rotate(360deg);
+					    transform: rotate(360deg);
+			}
+		}
+	</style>
+	<script src='jquery-3.1.1.min.js'></script>
+</head>
+<body>
+	<div id="music_btn" class="play">
+		<audio src="huahaoyueyuanye.mp3" autoplay="true" style="display: none;"></audio>
+	</div>
+	<script>
+		var audio=document.getElementsByTagName('audio')[0];   
+		$(function(){
+			$('#music_btn').bind('touchstart',function(){
+				$(this).toggleClass('play');
+				if( $(this).hasClass('play') ){
+					audio.play();
+					$(this).css('backgroundImage','url(play.png)');
+				}else{	
+					audio.pause();
+					$(this).css('backgroundImage','url(pause.png)');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+<!-- 
+因为H5的audio/video自带pause()和play()方法，直接调用即可。但注意它不是jquery的方法，如果直接写成$('#music_btn').find("audio").pause()是无效的,所以要用原生JS DOM来写。
+ -->
