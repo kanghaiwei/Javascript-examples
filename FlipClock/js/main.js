@@ -31,7 +31,7 @@ setInterval(function(){
 		}
 	}
 	// 记录旧时间
-	oldTime=newTime;
+	oldTime = newTime;
 },1000);
 // 补0
 function toDouble(n){
